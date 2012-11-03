@@ -1,0 +1,48 @@
+<html>
+  <body>
+    <script src="build/build.js"></script>
+
+    <style>
+      body {
+        padding: 50px;
+      }
+      canvas {
+        border: 1px dotted #eee;
+        float: left;
+        clear: both;
+        margin: 5px;
+      }
+    </style>
+
+    <canvas id="a" width=150 height=15></canvas>
+    <canvas id="b" width=50 height=20></canvas>
+    <canvas id="c" width=15 height=15></canvas>
+
+    <script>
+      var ease = require('component-ease');
+      var Sparkline = require('sparkline');
+      var autoscale = require('component-autoscale-canvas');
+      var ac = document.querySelector('#a');
+      var bc = document.querySelector('#b');
+      var cc = document.querySelector('#c');
+
+      var a = new Sparkline(ac);
+      var b = new Sparkline(bc);
+      var c = new Sparkline(cc);
+      autoscale(ac);
+      autoscale(bc);
+      autoscale(cc);
+
+      function update(n) {
+        var data = [];
+        var x = 0;
+        while (n--) data.push(ease.inOutBounce(x++) / Math.random() * 50);
+        a.update(data);
+        b.update(data);
+        c.update(data);
+      }
+
+      update(50);
+    </script>
+  </body>
+</html>
