@@ -1,7 +1,7 @@
 
 # sparkline
 
-  Tiny javascript spark line graphs.
+  Tiny javascript sparkline canvas graphs.
 
   ![js sparkline](http://f.cl.ly/items/06470C043x150Q3N321L/spark.png)
 
