@@ -1,7 +1,9 @@
 
 # sparkline
 
-  Tiny spark line graphs.
+  Tiny javascript spark line graphs.
+
+  ![js sparkline](http://f.cl.ly/items/06470C043x150Q3N321L/spark.png)
 
 ## Installation
 
