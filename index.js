@@ -45,7 +45,7 @@ Sparkline.prototype.update = function(data){
   ctx.beginPath();
   for (var i = 0; i < len; ++i) {
     var n = data[i];
-    ctx.lineTo(x += sx, h * (n / m));
+    ctx.lineTo(x += sx, h - h * (n / m));
   }
   ctx.stroke();
 };
