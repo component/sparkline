@@ -3,9 +3,16 @@
   "repo": "component/sparkline",
   "description": "Tiny spark line graphs",
   "version": "0.0.1",
-  "keywords": ["spark", "graph", "line", "chart", "canvas"],
+  "keywords": [
+    "spark",
+    "graph",
+    "line",
+    "chart",
+    "canvas"
+  ],
   "dependencies": {
-    "component/max": "*"
+    "component/max": "*",
+    "component/min": "*"
   },
   "development": {
     "component/autoscale-canvas": "*",

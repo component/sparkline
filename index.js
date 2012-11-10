@@ -3,7 +3,8 @@
  * Module dependencies.
  */
 
-var max = require('max');
+var max = require('max')
+  , min = require('min');
 
 /**
  * Expose `Sparkline`.
@@ -37,15 +38,16 @@ Sparkline.prototype.update = function(data){
   var len = data.length;
   var w = canvas.width;
   var h = canvas.height;
-  var m = max(data);
+  var _max = max(data);
+  var _min = min(data);
   var sx = w / len;
   var x = 0;
 
   canvas.width = w;
   ctx.beginPath();
   for (var i = 0; i < len; ++i) {
-    var n = data[i];
-    ctx.lineTo(x += sx, h - h * (n / m));
+    var n = data[i] - _min;
+    ctx.lineTo(x += sx, h - h * (n / _max));
   }
   ctx.stroke();
 };
